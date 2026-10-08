@@ -7,7 +7,7 @@ import BackgroundThumbnail from "@public/img/bg.png";
 
 export default function HomePage() {
   return (
-    <main className="mt-40 px-14">
+    <main className="mt-40 mb-40 px-14">
       {/* Thumbnail */}
       <div className="md:flex items-center justify-around">
         {/* Name */}
@@ -43,6 +43,36 @@ export default function HomePage() {
         {/* Profile */}
         <div>
           <div className="bg-neutral-800 w-96 h-96 rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Services */}
+      <div className="mt-52">
+        <h2 className="lg:text-3xl text-neutral-300 text-center font-bold">
+          Services
+        </h2>
+        <p className="text-neutral-500 mx-auto mt-5 text-center w-1/2">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil
+          eveniet veritatis, itaque velit totam, repellat facere quae sint
+          pariatur rem vel esse commodi? Molestiae, aut! Quidem, autem? Dicta
+          quisquam rem deleniti aut quas, suscipit esse accusamus corporis
+          facilis id eum?
+        </p>
+
+        {/* List Services */}
+        <div className="grid grid-cols-3 gap-5 mt-16">
+          {Array.from({ length: 5 }).map((_, testID) => (
+            <div className="bg-neutral-900 w-fit flex flex-col p-8 rounded-xl items-center ">
+              <div className="w-20 h-20 bg-neutral-700 rounded-full" />
+              <h4 className="mt-2 font-bold text-orange-600 text-lg">
+                App Design
+              </h4>
+              <p className="text-center mt-4 text-neutral-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+                nemo?
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </main>
