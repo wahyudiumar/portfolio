@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { navLink, navLinks } from "@constants/navigation";
+import { navLinks } from "@constants/navigation";
 
 function NavbarDesktop() {
   const [activeSection, setActiveSection] = useState(null);
