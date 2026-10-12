@@ -1,52 +1,46 @@
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
+import { navLink, navLinks } from "@constants/navigation";
+
 function NavbarDesktop() {
-  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.4,
+    };
+
+    const observer = new IntersectionObserver((entries: any) => {
+      entries.forEach((entry: any) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+
+    navLinks.forEach((menu: any) => {
+      const element = document.getElementById(menu.href);
+      if (element) observer.observe(element);
+    });
+  }, [navLinks]);
 
   return (
     <nav>
       <ul className="flex items-center gap-x-10 text-base">
-        <li>
-          <Link
-            href="/"
-            className={`${pathname === "/" ? "text-orange-400 font-bold" : "text-neutral-500 font-normal"}`}
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/services"
-            className={`${pathname === "/services" ? "text-orange-400 font-bold" : "text-neutral-500 font-normal"}`}
-          >
-            Services
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/about"
-            className={`${pathname === "/about" ? "text-orange-400 font-bold" : "text-neutral-500 font-normal"}`}
-          >
-            About me
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/portfolio"
-            className={`${pathname === "/portfolio" ? "text-orange-400 font-bold" : "text-neutral-500 font-normal"}`}
-          >
-            Portfolio
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/contact"
-            className={`${pathname === "/contact" ? "text-orange-400 font-bold" : "text-neutral-500 font-normal"}`}
-          >
-            Contact me
-          </Link>
-        </li>
+        {navLinks.map((item, itemIndex) => (
+          <li key={`${itemIndex}${itemIndex + 1}`}>
+            <Link
+              href={`#${item.href}`}
+              className={`${activeSection == item.href ? "text-orange-400 font-bold" : "text-neutral-500 font-normal"}`}
+            >
+              {item.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

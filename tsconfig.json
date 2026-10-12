@@ -13,6 +13,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "@constants/*": ["./src/constants/*"],
       "@components/*": ["./src/components/*"],
       "@icons/*": ["./src/components/icons/*"],
       "@shadcn/*": ["./src/components/shadcn/*"],
