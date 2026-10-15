@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { SetStateAction } from "react";
+
+import { PortfolioComponent } from "@components/PortfolioComponent";
 
 import { Download, Snowflake } from "lucide-react";
 import { InstagramIcon } from "@icons/InstagramIcon";
@@ -28,22 +31,35 @@ export default function HomePage() {
             Solusi Digital.
           </p>
 
-          <div className="mt-6 flex items-center gap-x-4">
-            <Link href="">
-              <InstagramIcon className="w-10 p-2 border border-neutral-700 rounded-full bg-neutral-400/30 text-neutral-50" />
+          {/* Download Curriculum Vitae */}
+          <div className="mt-10 flex items-center gap-x-5">
+            <Link
+              href="#portfolio"
+              className="bg-transparent border border-neutral-400 rounded-lg font-semibold text-neutral-400 hover:bg-neutral-200 hover:text-neutral-800 duration-200 px-6 py-2"
+            >
+              Projects
             </Link>
-            <Link href="">
-              <LinkedinIcon className="w-10 p-2 border border-neutral-700 rounded-full bg-neutral-400/30 text-neutral-50" />
+            <Link
+              href="#contact"
+              className="bg-orange-600 hover:bg-orange-500 rounded-lg font-semibold text-neutral-100 duration-200 px-6 py-2"
+            >
+              Contact
             </Link>
           </div>
 
-          <div className="mt-10 flex items-center gap-x-5">
-            <button className="bg-orange-600 rounded-lg hover:bg-orange-700 duration-150 font-semibold text-neutral-50 px-6 py-2">
-              Hire me
-            </button>
-            <button className="bg-transparent border border-neutral-400 rounded-lg font-semibold text-neutral-400 hover:bg-neutral-200 hover:text-neutral-800 duration-200 px-6 py-2">
-              Download CV
-            </button>
+          <div className="mt-6 flex items-center gap-x-4">
+            <Link
+              href=""
+              className="group hover:bg-orange-500 border border-neutral-700 rounded-lg bg-neutral-400/30 p-1.5 duration-300"
+            >
+              <InstagramIcon className="w-5 text-neutral-50" />
+            </Link>
+            <Link
+              href=""
+              className="group hover:bg-orange-500 border border-neutral-700 rounded-lg bg-neutral-400/30 p-1.5 duration-300"
+            >
+              <LinkedinIcon className="w-5 text-neutral-50" />
+            </Link>
           </div>
 
           <div className="absolute -z-10 w-[25rem] h-[25rem] top-20">
@@ -105,7 +121,24 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Skill */}
+      {/* Portfolio Showcase */}
+      <div className="mt-14 pt-20" id="portfolio">
+        <div className="flex flex-col justify-center gap-y-4">
+          <h2 className="lg:text-5xl text-orange-500 text-center font-bold">
+            Portfolio Showcase
+          </h2>
+          <span className="text-center flex items-center justify-center gap-x-3 text-lg text-neutral-500">
+            Cari tahu perkembangan saya melalui berbagai proyek dan keahlian
+            yang saya miliki. Setiap proyek dan keahlian yang saya miliki adalah
+            pencapaian saya pribadi untuk perkembangan karir saya menjadi lebih
+            baik dari sebelumnya.
+          </span>
+        </div>
+
+        <div className="mt-10">
+          <PortfolioComponent />
+        </div>
+      </div>
     </main>
   );
 }

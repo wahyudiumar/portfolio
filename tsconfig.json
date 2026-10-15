@@ -15,6 +15,7 @@
     "paths": {
       "@constants/*": ["./src/constants/*"],
       "@components/*": ["./src/components/*"],
+      "@datas/*": ["./src/datas/*"],
       "@icons/*": ["./src/components/icons/*"],
       "@shadcn/*": ["./src/components/shadcn/*"],
       "@hooks/*": ["./src/hooks/*"],
