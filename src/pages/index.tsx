@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { SetStateAction } from "react";
 
+import { FormKontak } from "@components/contact/FormKontak";
 import { PortfolioComponent } from "@components/PortfolioComponent";
 
 import { Download, Snowflake } from "lucide-react";
@@ -15,7 +15,7 @@ import ProfilAboutMeImage from "@public/img/profil-aboutme.jpg";
 
 export default function HomePage() {
   return (
-    <main className="mb-40 px-36">
+    <main className="px-36 relative">
       {/* Thumbnail */}
       <div className="pt-40 md:flex items-center justify-between" id="home">
         {/* Name */}
@@ -35,13 +35,13 @@ export default function HomePage() {
           <div className="mt-10 flex items-center gap-x-5">
             <Link
               href="#portfolio"
-              className="bg-transparent border border-neutral-400 rounded-lg font-semibold text-neutral-400 hover:bg-neutral-200 hover:text-neutral-800 duration-200 px-6 py-2"
+              className="bg-transparent border border-neutral-400 rounded-lg font-semibold text-neutral-400 hover:bg-neutral-200 hover:text-neutral-800 duration-200 px-6 py-2 text-sm"
             >
               Projects
             </Link>
             <Link
               href="#contact"
-              className="bg-orange-600 hover:bg-orange-500 rounded-lg font-semibold text-neutral-100 duration-200 px-6 py-2"
+              className="bg-orange-600 hover:bg-orange-500 rounded-lg font-semibold text-neutral-100 duration-200 px-6 py-2 text-sm"
             >
               Contact
             </Link>
@@ -127,7 +127,7 @@ export default function HomePage() {
           <h2 className="lg:text-5xl text-orange-500 text-center font-bold">
             Portfolio Showcase
           </h2>
-          <span className="text-center flex items-center justify-center gap-x-3 text-lg text-neutral-500">
+          <span className="text-center flex items-center justify-center gap-x-3 text-base text-neutral-500">
             Cari tahu perkembangan saya melalui berbagai proyek dan keahlian
             yang saya miliki. Setiap proyek dan keahlian yang saya miliki adalah
             pencapaian saya pribadi untuk perkembangan karir saya menjadi lebih
@@ -138,6 +138,31 @@ export default function HomePage() {
         <div className="mt-10">
           <PortfolioComponent />
         </div>
+      </div>
+
+      {/* Contact */}
+      <div className="mt-14 pt-20" id="contact">
+        <div className="flex flex-col justify-center gap-y-4">
+          <h2 className="lg:text-4xl text-orange-500 text-center font-bold">
+            Hubungi Saya
+          </h2>
+          <span className="text-center flex items-center justify-center gap-x-3 text-base text-neutral-500">
+            Jika mempunyai pertanyaan, hubungi saya di kolom bawah
+          </span>
+        </div>
+
+        {/* Kolom Komentar */}
+        <div className="w-2/3 mt-6 mx-auto">
+          <FormKontak />
+        </div>
+      </div>
+
+      <div className="bg-neutral-900 w-full absolute inset-x-0 mt-20 py-5 px-10 flex flex-col justify-center items-center">
+        <p className="text-neutral-400 text-sm">
+          &copy; {new Date().getFullYear()}
+          <span className="font-bold mx-1">Wahyudi Umar&trade;.</span> All
+          Rights Reserved.
+        </p>
       </div>
     </main>
   );
