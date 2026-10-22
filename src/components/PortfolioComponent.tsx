@@ -10,7 +10,7 @@ import HTMLImg from "@public/img/skills/html.svg";
 
 function PortfolioComponent() {
   return (
-    <Tabs className="w-[90%] mx-auto flex-col">
+    <Tabs className="w-full md:w-[90%] mx-auto flex-col">
       <TabsList className="p-2 bg-neutral-800 w-full">
         <TabsTrigger
           value="projects"
@@ -28,11 +28,11 @@ function PortfolioComponent() {
         </TabsTrigger>
       </TabsList>
 
-      <div className="px-5 mt-3">
+      <div className="md:px-5 mt-3">
         {/* Portfolio */}
         <TabsContent
           value="projects"
-          className="grid grid-cols-2 gap-4 text-neutral-200"
+          className="grid md:grid-cols-2 gap-y-6 md:gap-4 text-neutral-200"
         >
           {dataPortfolio.map((portfolio, portfolioIndex) => (
             <div
@@ -79,7 +79,7 @@ function PortfolioComponent() {
         {/* Skills */}
         <TabsContent
           value="techstack"
-          className="text-neutral-200 grid gap-y-6 gap-x-8 grid-cols-5"
+          className="text-neutral-200 grid gap-5 md:gap-y-6 md:gap-x-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
         >
           {dataSkill.map((skill, skillIndex) => (
             <div

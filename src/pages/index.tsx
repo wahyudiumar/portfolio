@@ -54,13 +54,13 @@ export default function HomePage() {
 
           <div className="mt-6 flex items-center gap-x-4">
             <Link
-              href=""
+              href="https://www.instagram.com/vanzitter155/"
               className="group hover:bg-orange-500 border border-neutral-700 rounded-lg bg-neutral-400/30 p-1.5 duration-300"
             >
               <InstagramIcon className="w-5 text-neutral-50" />
             </Link>
             <Link
-              href=""
+              href="https://www.linkedin.com/in/wahyudi-umar-ba2333236/"
               className="group hover:bg-orange-500 border border-neutral-700 rounded-lg bg-neutral-400/30 p-1.5 duration-300"
             >
               <LinkedinIcon className="w-5 text-neutral-50" />
@@ -127,17 +127,17 @@ export default function HomePage() {
       </div>
 
       {/* Portfolio Showcase */}
-      <div className="mt-14 pt-20" id="portfolio">
+      <div className="mt-14 md:pt-20" id="portfolio">
         <div className="flex flex-col justify-center gap-y-4">
-          <h2 className="lg:text-5xl text-orange-500 text-center font-bold">
+          <h2 className="text-4xl md:text-5xl text-orange-500 text-center font-bold">
             Portfolio Showcase
           </h2>
-          <span className="text-center flex items-center justify-center gap-x-3 text-base text-neutral-500">
+          <p className="text-center flex items-center justify-center gap-x-3 text-base text-neutral-500">
             Cari tahu perkembangan saya melalui berbagai proyek dan keahlian
             yang saya miliki. Setiap proyek dan keahlian yang saya miliki adalah
             pencapaian saya pribadi untuk perkembangan karir saya menjadi lebih
             baik dari sebelumnya.
-          </span>
+          </p>
         </div>
 
         <div className="mt-10">
@@ -146,9 +146,9 @@ export default function HomePage() {
       </div>
 
       {/* Contact */}
-      <div className="mt-14 pt-20" id="contact">
+      <div className="mt-14 md:pt-20" id="contact">
         <div className="flex flex-col justify-center gap-y-4">
-          <h2 className="lg:text-4xl text-orange-500 text-center font-bold">
+          <h2 className="text-4xl text-orange-500 text-center font-bold">
             Hubungi Saya
           </h2>
           <span className="text-center flex items-center justify-center gap-x-3 text-base text-neutral-500">
@@ -157,7 +157,7 @@ export default function HomePage() {
         </div>
 
         {/* Kolom Komentar */}
-        <div className="w-2/3 mt-6 mx-auto">
+        <div className="md:w-2/3 mt-6 mx-auto">
           <FormKontak />
         </div>
       </div>
