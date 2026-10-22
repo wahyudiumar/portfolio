@@ -100,7 +100,9 @@ export default function HomePage() {
           </div>
           <div className="mt-6 md:mt-3 md:w-[55%] ">
             <h1 className="text-center md:text-start text-4xl md:text-5xl text-neutral-200 font-bold mb-8">
-              <span className="block text-orange-600 mb-3">Hello, I'm</span>
+              <span className="block text-orange-600 mb-3">
+                Hello, I&apos;m
+              </span>
               Wahyudi Umar
             </h1>
             <p className="text-neutral-500 text-lg text-justify">
@@ -114,7 +116,7 @@ export default function HomePage() {
             <div className="my-6 border flex gap-x-1 items-center border-neutral-800 py-4 px-6 rounded-xl">
               <QuoteIcon className="w-6 -mt-4 text-neutral-600" />
               <span className="text-neutral-300 text-sm italic font-semibold">
-                "Memanfaatkan AI sebagai alat bantu, bukan pengganti."
+                &quot;Memanfaatkan AI sebagai alat bantu, bukan pengganti.&quot;
               </span>
             </div>
 

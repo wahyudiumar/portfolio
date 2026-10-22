@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { navLinks } from "@constants/navigation";
 
-function NavbarDesktop() {
-  const [activeSection, setActiveSection] = useState(null);
+export function NavbarDesktop() {
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const options = {
@@ -13,15 +13,15 @@ function NavbarDesktop() {
       threshold: 0.4,
     };
 
-    const observer = new IntersectionObserver((entries: any) => {
-      entries.forEach((entry: any) => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
         }
       });
     }, options);
 
-    navLinks.forEach((menu: any) => {
+    navLinks.forEach((menu: { href: string }) => {
       const element = document.getElementById(menu.href);
       if (element) observer.observe(element);
     });
@@ -44,5 +44,3 @@ function NavbarDesktop() {
     </nav>
   );
 }
-
-export { NavbarDesktop };
