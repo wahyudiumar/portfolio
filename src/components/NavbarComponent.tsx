@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useWindowSize } from "@hooks/useWindowSize";
 import { motion } from "motion/react";
 
-import { NavbarDesktop } from "./NavbarDesktop";
-import { NavbarMobile } from "./NavbarMobile";
+import { NavbarDesktop } from "./navbar/NavbarDesktop";
+import { NavbarMobile } from "./navbar/NavbarMobile";
 
 import { Menu, X } from "lucide-react";
 
