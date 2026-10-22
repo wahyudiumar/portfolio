@@ -26,7 +26,7 @@ function NavbarComponent() {
 
   return (
     <header
-      className={`flex  h-20 items-center justify-between w-full top-0 transition-colors z-50 ${resize > 768 ? "px-32 bg-transparent" : "bg-neutral-950 px-10"} ${!isScroll ? "bg-transparent fixed" : "bg-neutral-950/40 fixed backdrop-blur-lg"}`}
+      className={`flex  h-20 items-center justify-between w-full top-0 transition-colors z-50 ${resize > 768 ? "px-32 bg-transparent" : "!bg-neutral-950 px-10"} ${!isScroll ? "bg-transparent fixed" : "bg-neutral-950/40 fixed backdrop-blur-lg"}`}
     >
       <div>
         <h2 className="text-orange-400 font-bold text-xl">Wahyudi Umar</h2>

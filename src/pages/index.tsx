@@ -15,18 +15,23 @@ import ProfilAboutMeImage from "@public/img/profil-aboutme.jpg";
 
 export default function HomePage() {
   return (
-    <main className="px-36 relative">
+    <main className="px-10 md:px-36 relative">
       {/* Thumbnail */}
-      <div className="pt-40 md:flex items-center justify-between" id="home">
+      <div
+        className="pt-32 md:pt-40 flex flex-col md:flex-row items-center justify-center md:justify-between"
+        id="home"
+      >
         {/* Name */}
         <div>
-          <h5 className="text-neutral-400 text-lg font-semibold">Seorang,</h5>
-          <h1 className="text-neutral-200 text-6xl font-bold mt-4">
+          <h5 className="text-neutral-400 text-base md:text-lg font-semibold">
+            Seorang,
+          </h5>
+          <h1 className="text-neutral-200 text-5xl md:text-6xl font-bold mt-4">
             Frontend
             <span className="text-orange-600 mt-3 block">Developer</span>
           </h1>
 
-          <p className="mt-4 text-lg w-[30rem] text-neutral-500 font-semibold">
+          <p className="mt-4 text-base md:text-lg md:w-[30rem] text-neutral-500 font-semibold">
             Menciptakan Sebuah Website yang Spektakuler dan User Friendly untuk
             Solusi Digital.
           </p>
@@ -62,19 +67,19 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="absolute -z-10 w-[25rem] h-[25rem] top-20">
+          <div className="absolute -z-10 max-sm:w-72 max-sm:h-72 md:w-[25rem] md:h-[25rem] top-20">
             <Image src={BackgroundThumbnail} alt="Background Thumbnail" fill />
           </div>
         </div>
 
         {/* Illustation Image */}
-        <IllustrationThumbnailHomeImage className="w-[30rem]" />
+        <IllustrationThumbnailHomeImage className="mt-10 md:mt-0 w-full md:w-[30rem]" />
       </div>
 
       {/* About Me */}
-      <div className="mt-14 pt-28" id="aboutme">
+      <div className="mt-14 pt-8 md:pt-28" id="aboutme">
         <div className="flex flex-col justify-center gap-y-4">
-          <h2 className="lg:text-5xl text-orange-500 text-center font-bold">
+          <h2 className="text-4xl lg:text-5xl text-orange-500 text-center font-bold">
             About Me
           </h2>
           <span className="text-center flex items-center justify-center gap-x-3 text-lg text-neutral-500">
@@ -84,8 +89,8 @@ export default function HomePage() {
           </span>
         </div>
 
-        <div className="mt-16 flex justify-between items-start">
-          <div className="profile-aboutme-parent w-96 h-[30rem] shadow shadow-neutral-800 hover:shadow-transparent duration-500 relative border-4 hover:cursor-pointer rounded-lg border-neutral-600 group overflow-hidden ">
+        <div className="mt-12 md:mt-16 flex flex-col md:flex-row justify-between items-start">
+          <div className="profile-aboutme-parent mx-auto md:mx-0 w-[20rem] md:w-96 h-[20rem] md:h-[30rem] shadow shadow-neutral-800 hover:shadow-transparent duration-500 relative border-4 hover:cursor-pointer rounded-lg border-neutral-600 group overflow-hidden ">
             <Image
               src={ProfilAboutMeImage}
               alt="Profil Portfolio"
@@ -93,8 +98,8 @@ export default function HomePage() {
             />
             <div className="group-hover:bg-transparent bg-neutral-700/30 absolute z-10 w-full h-full duration-500" />
           </div>
-          <div className="mt-3 w-[55%] ">
-            <h1 className="text-5xl text-neutral-200 font-bold mb-8">
+          <div className="mt-6 md:mt-3 md:w-[55%] ">
+            <h1 className="text-center md:text-start text-4xl md:text-5xl text-neutral-200 font-bold mb-8">
               <span className="block text-orange-600 mb-3">Hello, I'm</span>
               Wahyudi Umar
             </h1>
@@ -113,7 +118,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            <button className=" flex items-center gap-x-2 bg-orange-600 px-6 text-base py-2.5 rounded-md font-bold text-neutral-50">
+            <button className=" flex items-center justify-center md:justify-start w-full md:w-auto gap-x-2 bg-orange-600 px-6 text-base py-2.5 rounded-md font-bold text-neutral-50">
               <Download className="w-5 h-5" />
               Download CV
             </button>

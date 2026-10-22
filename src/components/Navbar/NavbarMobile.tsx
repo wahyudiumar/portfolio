@@ -7,14 +7,14 @@ export function NavbarMobile({ isOpen = false }) {
   return (
     <motion.nav
       animate={{
-        height: isOpen ? 170 : 0,
+        height: isOpen ? 240 : 0,
         display: isOpen ? "flex" : "none",
       }}
       transition={{ duration: 0.2 }}
-      className={`fixed top-20 bg-neutral-950 w-full inset-x-0 overflow-hidden px-10 flex-col gap-y-4`}
+      className={`fixed top-20 bg-neutral-950 w-full inset-x-0 overflow-hidden px-10 flex-col gap-y-5`}
     >
       {navLinks.map((items, itemsID) => (
-        <Link href="" className="text-neutral-50" key={itemsID}>
+        <Link href="" className="text-neutral-50 text-lg mt-2" key={itemsID}>
           {items.name}
         </Link>
       ))}
