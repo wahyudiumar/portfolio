@@ -6,7 +6,6 @@ import { dataPortfolio } from "@datas/dataPortfolio";
 import { dataSkill } from "@datas/dataSkill";
 
 import { ArrowRight, Code, Cpu, SquareArrowOutUpRight } from "lucide-react";
-import HTMLImg from "@public/img/skills/html.svg";
 
 function PortfolioComponent() {
   return (
@@ -83,8 +82,8 @@ function PortfolioComponent() {
         >
           {dataSkill.map((skill, skillIndex) => (
             <div
-              className="bg-neutral-800 py-6 rounded-xl group hover:scale-105 duration-300
-            "
+              className="bg-neutral-800 py-6 rounded-xl group hover:scale-105 duration-300"
+              key={`1${skillIndex}`}
             >
               <div className="relative w-full h-20 ">
                 <Image

@@ -7,7 +7,7 @@ import { NavbarMobile } from "./NavbarMobile";
 
 import { Menu, X } from "lucide-react";
 
-function NavbarComponent() {
+export function NavbarComponent() {
   const [openNav, setOpenNav] = useState(false);
   const [isScroll, setScroll] = useState(false);
   const { resize } = useWindowSize();
@@ -56,5 +56,3 @@ function NavbarComponent() {
     </header>
   );
 }
-
-export { NavbarComponent };
