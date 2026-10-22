@@ -14,7 +14,7 @@
     "incremental": true,
     "paths": {
       "@constants/*": ["./src/constants/*"],
-      "@components/*": ["components/*"],
+      "@components/*": ["./src/components/*"],
       "@datas/*": ["./src/datas/*"],
       "@icons/*": ["./src/components/icons/*"],
       "@shadcn/*": ["./src/components/shadcn/*"],
@@ -22,7 +22,7 @@
       "@libs/*": ["./src/libs/*"],
       "@pages/*": ["./src/pages/*"],
       "@public/*": ["./public/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["./src/styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
