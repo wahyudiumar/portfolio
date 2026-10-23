@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 import { FormKontak } from "@components/contact/FormKontak";
 import { PortfolioComponent } from "@components/PortfolioComponent";
@@ -23,21 +24,59 @@ export default function HomePage() {
       >
         {/* Name */}
         <div>
-          <h5 className="text-neutral-400 text-base md:text-lg font-semibold">
-            Seorang,
-          </h5>
-          <h1 className="text-neutral-200 text-5xl md:text-6xl font-bold mt-4">
-            Frontend
-            <span className="text-orange-600 mt-3 block">Developer</span>
-          </h1>
+          <div>
+            <motion.h5
+              className="text-neutral-400 text-base md:text-lg font-semibold"
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              variants={{
+                hidden: { opacity: 0, translateX: "-50px", translateY: "50px" },
+                visible: { opacity: 1, translateX: 0, translateY: 0 },
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              Seorang,
+            </motion.h5>
+            <motion.h1
+              className="text-neutral-200 text-5xl md:text-6xl font-bold mt-4"
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+              variants={{
+                hidden: { opacity: 0, translateX: "-50px", translateY: "50px" },
+                visible: { opacity: 1, translateX: 0, translateY: 0 },
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              Frontend
+              <span className="text-orange-600 mt-3 block">Developer</span>
+            </motion.h1>
+          </div>
 
-          <p className="mt-4 text-base md:text-lg md:w-[30rem] text-neutral-500 font-semibold">
+          <motion.p
+            className="mt-4 text-base md:text-lg md:w-[30rem] text-neutral-500 font-semibold"
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            viewport={{ once: true, amount: "all" }}
+          >
             Menciptakan Sebuah Website yang Spektakuler dan User Friendly untuk
             Solusi Digital.
-          </p>
+          </motion.p>
 
           {/* Download Curriculum Vitae */}
-          <div className="mt-10 flex items-center gap-x-5">
+          <motion.div
+            className="mt-10 flex items-center gap-x-5"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+            viewport={{ once: true, amount: "all" }}
+          >
             <Link
               href="#portfolio"
               className="bg-transparent border border-neutral-400 rounded-lg font-semibold text-neutral-400 hover:bg-neutral-200 hover:text-neutral-800 duration-200 px-6 py-2 text-sm"
@@ -50,9 +89,15 @@ export default function HomePage() {
             >
               Contact
             </Link>
-          </div>
+          </motion.div>
 
-          <div className="mt-6 flex items-center gap-x-4">
+          <motion.div
+            className="mt-6 flex items-center gap-x-4"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+            viewport={{ once: true, amount: "all" }}
+          >
             <Link
               href="https://www.instagram.com/vanzitter155/"
               className="group hover:bg-orange-500 border border-neutral-700 rounded-lg bg-neutral-400/30 p-1.5 duration-300"
@@ -65,7 +110,7 @@ export default function HomePage() {
             >
               <LinkedinIcon className="w-5 text-neutral-50" />
             </Link>
-          </div>
+          </motion.div>
 
           <div className="absolute -z-10 max-sm:w-72 max-sm:h-72 md:w-[25rem] md:h-[25rem] top-20">
             <Image src={BackgroundThumbnail} alt="Background Thumbnail" fill />
@@ -73,11 +118,18 @@ export default function HomePage() {
         </div>
 
         {/* Illustation Image */}
-        <IllustrationThumbnailHomeImage className="mt-10 md:mt-0 w-full md:w-[30rem]" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+          viewport={{ once: true, amount: "all" }}
+        >
+          <IllustrationThumbnailHomeImage className="mt-10 md:mt-0 w-full md:w-[30rem]" />
+        </motion.div>
       </div>
 
       {/* About Me */}
-      <div className="mt-14 pt-8 md:pt-28" id="aboutme">
+      <div className="mt-10 md:mt-28 pt-8 md:pt-16" id="aboutme">
         <div className="flex flex-col justify-center gap-y-4">
           <h2 className="text-4xl lg:text-5xl text-orange-500 text-center font-bold">
             About Me
