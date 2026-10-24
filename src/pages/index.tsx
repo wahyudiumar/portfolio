@@ -131,51 +131,101 @@ export default function HomePage() {
       {/* About Me */}
       <div className="mt-10 md:mt-28 pt-8 md:pt-16" id="aboutme">
         <div className="flex flex-col justify-center gap-y-4">
-          <h2 className="text-4xl lg:text-5xl text-orange-500 text-center font-bold">
+          <motion.h2
+            className="text-4xl lg:text-5xl text-orange-500 text-center font-bold"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: "all" }}
+          >
             About Me
-          </h2>
-          <span className="text-center flex items-center justify-center gap-x-3 text-lg text-neutral-500">
+          </motion.h2>
+          <motion.p
+            className="text-center flex items-center justify-center gap-x-3 text-lg text-neutral-500"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            viewport={{ once: true, amount: "all" }}
+          >
             <Snowflake className="w-6 text-orange-400" /> Menjalani Setiap
             Tantangan Untuk Menuju Sebuah Kesuksesan
             <Snowflake className="w-6 text-orange-400" />
-          </span>
+          </motion.p>
         </div>
 
         <div className="mt-12 md:mt-16 flex flex-col md:flex-row justify-between items-start">
-          <div className="profile-aboutme-parent mx-auto md:mx-0 w-[20rem] md:w-96 h-[20rem] md:h-[30rem] shadow shadow-neutral-800 hover:shadow-transparent duration-500 relative border-4 hover:cursor-pointer rounded-lg border-neutral-600 group overflow-hidden ">
+          <motion.div
+            className="profile-aboutme-parent mx-auto md:mx-0 w-[20rem] md:w-96 h-[20rem] md:h-[30rem] shadow shadow-neutral-800 hover:shadow-transparent duration-500 relative border-4 hover:cursor-pointer rounded-lg border-neutral-600 group overflow-hidden "
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: "all" }}
+          >
             <Image
               src={ProfilAboutMeImage}
               alt="Profil Portfolio"
               className="object-cover group-hover:scale-110 group-hover:rotate-3 duration-500 h-full absolute"
             />
             <div className="group-hover:bg-transparent bg-neutral-700/30 absolute z-10 w-full h-full duration-500" />
-          </div>
+          </motion.div>
           <div className="mt-6 md:mt-3 md:w-[55%] ">
-            <h1 className="text-center md:text-start text-4xl md:text-5xl text-neutral-200 font-bold mb-8">
-              <span className="block text-orange-600 mb-3">
+            <motion.h1 className="text-center md:text-start text-4xl md:text-5xl text-neutral-200 font-bold mb-8">
+              <motion.span
+                className="block text-orange-600 mb-3"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                viewport={{ once: true, amount: "all" }}
+              >
                 Hello, I&apos;m
-              </span>
-              Wahyudi Umar
-            </h1>
-            <p className="text-neutral-500 text-lg text-justify">
+              </motion.span>
+              <motion.span
+                className="block"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+                viewport={{ once: true, amount: "all" }}
+              >
+                Wahyudi Umar
+              </motion.span>
+            </motion.h1>
+            <motion.p
+              className="text-neutral-500 text-lg text-justify"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: "all" }}
+            >
               Saya adalah seorang Programmer Amatir yang berfokus pada
               pengembangan sebuah Aplikasi Berbasis Web di Bidang Front-End
               Developer. Saat ini, saya berfokus pada pengalaman saya untuk
               menciptakan sebuah aplikasi yang menarik dan selalu berupaya untuk
               memberikan solusi dan masukan terhadap proyek yang saya kerjakan.
-            </p>
+            </motion.p>
 
-            <div className="my-6 border flex gap-x-1 items-center border-neutral-800 py-4 px-6 rounded-xl">
+            <motion.div
+              className="my-6 border flex gap-x-1 items-center border-neutral-800 py-4 px-6 rounded-xl"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: "all" }}
+            >
               <QuoteIcon className="w-6 -mt-4 text-neutral-600" />
               <span className="text-neutral-300 text-sm italic font-semibold">
                 &quot;Memanfaatkan AI sebagai alat bantu, bukan pengganti.&quot;
               </span>
-            </div>
+            </motion.div>
 
-            <button className=" flex items-center justify-center md:justify-start w-full md:w-auto gap-x-2 bg-orange-600 px-6 text-base py-2.5 rounded-md font-bold text-neutral-50">
+            <motion.button
+              className=" flex items-center justify-center md:justify-start w-full md:w-auto gap-x-2 bg-orange-600 px-6 text-base py-2.5 rounded-md font-bold text-neutral-50"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: "all" }}
+            >
               <Download className="w-5 h-5" />
               Download CV
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
