@@ -75,7 +75,7 @@ function PortfolioComponent() {
                   Live Demo <SquareArrowOutUpRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link
-                  href=""
+                  href={`./project/${portfolio.title}`}
                   className="flex items-center gap-x-2 bg-neutral-800 px-3 py-1.5 rounded-md font-semibold hover:scale-105 duration-300 hover:bg-neutral-700"
                 >
                   Details <ArrowRight className="w-3.5 h-3.5" />
