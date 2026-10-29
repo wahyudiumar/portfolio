@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+
+import { motion } from "motion/react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@shadcn/Tabs";
 
 import { dataPortfolio } from "@datas/dataPortfolio";
@@ -34,9 +36,17 @@ function PortfolioComponent() {
           className="grid md:grid-cols-2 gap-y-6 md:gap-4 text-neutral-200"
         >
           {dataPortfolio.map((portfolio, portfolioIndex) => (
-            <div
+            <motion.div
               key={portfolioIndex}
               className="flex flex-col bg-neutral-900 rounded-lg p-6 shadow"
+              initial={{
+                opacity: 0,
+                y: 50,
+                x: portfolioIndex % 2 === 0 ? -50 : 50,
+              }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true }}
             >
               <div className="relative w-full h-80 rounded-md">
                 <Image
@@ -71,19 +81,26 @@ function PortfolioComponent() {
                   Details <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </TabsContent>
 
         {/* Skills */}
         <TabsContent
           value="techstack"
-          className="text-neutral-200 grid gap-5 md:gap-y-6 md:gap-x-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+          className="text-neutral-200 grid gap-5 md:gap-y-6 md:gap-x-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 "
         >
           {dataSkill.map((skill, skillIndex) => (
-            <div
+            <motion.div
               className="bg-neutral-800 py-6 rounded-xl group hover:scale-105 duration-300"
               key={`1${skillIndex}`}
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true }}
             >
               <div className="relative w-full h-20 ">
                 <Image
@@ -97,7 +114,7 @@ function PortfolioComponent() {
               <h6 className="text-sm font-bold mt-2 text-center">
                 {skill.title}
               </h6>
-            </div>
+            </motion.div>
           ))}
         </TabsContent>
       </div>

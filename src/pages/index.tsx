@@ -233,15 +233,27 @@ export default function HomePage() {
       {/* Portfolio Showcase */}
       <div className="mt-14 md:pt-20" id="portfolio">
         <div className="flex flex-col justify-center gap-y-4">
-          <h2 className="text-4xl md:text-5xl text-orange-500 text-center font-bold">
+          <motion.h2
+            className="text-4xl md:text-5xl text-orange-500 text-center font-bold"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: "all" }}
+          >
             Portfolio Showcase
-          </h2>
-          <p className="text-center flex items-center justify-center gap-x-3 text-base text-neutral-500">
+          </motion.h2>
+          <motion.p
+            className="text-center flex items-center justify-center gap-x-3 text-base text-neutral-500"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            viewport={{ once: true, amount: "all" }}
+          >
             Cari tahu perkembangan saya melalui berbagai proyek dan keahlian
             yang saya miliki. Setiap proyek dan keahlian yang saya miliki adalah
             pencapaian saya pribadi untuk perkembangan karir saya menjadi lebih
             baik dari sebelumnya.
-          </p>
+          </motion.p>
         </div>
 
         <div className="mt-10">
