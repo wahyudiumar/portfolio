@@ -8,9 +8,9 @@ import { NavbarMobile } from "./Navbar/NavbarMobile";
 import { Menu, X } from "lucide-react";
 
 export function NavbarComponent() {
+  const { resize } = useWindowSize();
   const [openNav, setOpenNav] = useState(false);
   const [isScroll, setScroll] = useState(false);
-  const { resize } = useWindowSize();
 
   useEffect(() => {
     function navScrollTop() {
@@ -31,9 +31,7 @@ export function NavbarComponent() {
       <div>
         <h2 className="text-orange-400 font-bold text-xl">Wahyudi Umar</h2>
       </div>
-
-      {resize > 768 && <NavbarDesktop />}
-
+      {resize > 768 ? <NavbarDesktop /> : <NavbarMobile />}
       {resize < 768 && (
         <button
           className={`text-neutral-50 duration-300 data-[open]:rotate-90 ${!openNav ? "rotate-90-" : ""}`}
@@ -51,8 +49,6 @@ export function NavbarComponent() {
           </motion.div>
         </button>
       )}
-
-      {resize < 768 && <NavbarMobile isOpen={openNav} />}
     </header>
   );
 }

@@ -5,12 +5,7 @@ export const dataPortfolio = [
       "VIP Engineering adalah website yang menyediakan layanan teknik terkait dengan proses kimia, energi, pengolahan air dan pengolahan air limbah.",
     images: "/img/portfolio/vipeng.png",
     url: "https://vipeng.com",
-    tech: [
-      {
-        title: "reactjs",
-        icon: "",
-      },
-    ],
+    tech: ["Nextjs", "Tailwind CSS"],
   },
 
   {
@@ -19,11 +14,6 @@ export const dataPortfolio = [
       "VIP Engineering adalah website yang menyediakan layanan teknik terkait dengan proses kimia, energi, pengolahan air dan pengolahan air limbah.",
     images: "/img/portfolio/vipeng.png",
     url: "https://vipeng.com",
-    tech: [
-      {
-        title: "reactjs",
-        icon: "",
-      },
-    ],
+    tech: ["Reactjs"],
   },
 ];
