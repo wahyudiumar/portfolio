@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 import { FormKontak } from "@components/contact/FormKontak";
 import { PortfolioComponent } from "@components/PortfolioComponent";
@@ -23,21 +24,59 @@ export default function HomePage() {
       >
         {/* Name */}
         <div>
-          <h5 className="text-neutral-400 text-base md:text-lg font-semibold">
-            Seorang,
-          </h5>
-          <h1 className="text-neutral-200 text-5xl md:text-6xl font-bold mt-4">
-            Frontend
-            <span className="text-orange-600 mt-3 block">Developer</span>
-          </h1>
+          <div>
+            <motion.h5
+              className="text-neutral-400 text-base md:text-lg font-semibold"
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              variants={{
+                hidden: { opacity: 0, translateX: "-50px", translateY: "50px" },
+                visible: { opacity: 1, translateX: 0, translateY: 0 },
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              Seorang,
+            </motion.h5>
+            <motion.h1
+              className="text-neutral-200 text-5xl md:text-6xl font-bold mt-4"
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+              variants={{
+                hidden: { opacity: 0, translateX: "-50px", translateY: "50px" },
+                visible: { opacity: 1, translateX: 0, translateY: 0 },
+              }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              Frontend
+              <span className="text-orange-600 mt-3 block">Developer</span>
+            </motion.h1>
+          </div>
 
-          <p className="mt-4 text-base md:text-lg md:w-[30rem] text-neutral-500 font-semibold">
+          <motion.p
+            className="mt-4 text-base md:text-lg md:w-[30rem] text-neutral-500 font-semibold"
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            viewport={{ once: true, amount: "all" }}
+          >
             Menciptakan Sebuah Website yang Spektakuler dan User Friendly untuk
             Solusi Digital.
-          </p>
+          </motion.p>
 
           {/* Download Curriculum Vitae */}
-          <div className="mt-10 flex items-center gap-x-5">
+          <motion.div
+            className="mt-10 flex items-center gap-x-5"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+            viewport={{ once: true, amount: "all" }}
+          >
             <Link
               href="#portfolio"
               className="bg-transparent border border-neutral-400 rounded-lg font-semibold text-neutral-400 hover:bg-neutral-200 hover:text-neutral-800 duration-200 px-6 py-2 text-sm"
@@ -50,9 +89,15 @@ export default function HomePage() {
             >
               Contact
             </Link>
-          </div>
+          </motion.div>
 
-          <div className="mt-6 flex items-center gap-x-4">
+          <motion.div
+            className="mt-6 flex items-center gap-x-4"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+            viewport={{ once: true, amount: "all" }}
+          >
             <Link
               href="https://www.instagram.com/vanzitter155/"
               className="group hover:bg-orange-500 border border-neutral-700 rounded-lg bg-neutral-400/30 p-1.5 duration-300"
@@ -65,7 +110,7 @@ export default function HomePage() {
             >
               <LinkedinIcon className="w-5 text-neutral-50" />
             </Link>
-          </div>
+          </motion.div>
 
           <div className="absolute -z-10 max-sm:w-72 max-sm:h-72 md:w-[25rem] md:h-[25rem] top-20">
             <Image src={BackgroundThumbnail} alt="Background Thumbnail" fill />
@@ -73,57 +118,114 @@ export default function HomePage() {
         </div>
 
         {/* Illustation Image */}
-        <IllustrationThumbnailHomeImage className="mt-10 md:mt-0 w-full md:w-[30rem]" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+          viewport={{ once: true, amount: "all" }}
+        >
+          <IllustrationThumbnailHomeImage className="mt-10 md:mt-0 w-full md:w-[30rem]" />
+        </motion.div>
       </div>
 
       {/* About Me */}
-      <div className="mt-14 pt-8 md:pt-28" id="aboutme">
+      <div className="mt-10 md:mt-28 pt-8 md:pt-16" id="aboutme">
         <div className="flex flex-col justify-center gap-y-4">
-          <h2 className="text-4xl lg:text-5xl text-orange-500 text-center font-bold">
+          <motion.h2
+            className="text-4xl lg:text-5xl text-orange-500 text-center font-bold"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: "all" }}
+          >
             About Me
-          </h2>
-          <span className="text-center flex items-center justify-center gap-x-3 text-lg text-neutral-500">
+          </motion.h2>
+          <motion.p
+            className="text-center flex items-center justify-center gap-x-3 text-lg text-neutral-500"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            viewport={{ once: true, amount: "all" }}
+          >
             <Snowflake className="w-6 text-orange-400" /> Menjalani Setiap
             Tantangan Untuk Menuju Sebuah Kesuksesan
             <Snowflake className="w-6 text-orange-400" />
-          </span>
+          </motion.p>
         </div>
 
         <div className="mt-12 md:mt-16 flex flex-col md:flex-row justify-between items-start">
-          <div className="profile-aboutme-parent mx-auto md:mx-0 w-[20rem] md:w-96 h-[20rem] md:h-[30rem] shadow shadow-neutral-800 hover:shadow-transparent duration-500 relative border-4 hover:cursor-pointer rounded-lg border-neutral-600 group overflow-hidden ">
+          <motion.div
+            className="profile-aboutme-parent mx-auto md:mx-0 w-[20rem] md:w-96 h-[20rem] md:h-[30rem] shadow shadow-neutral-800 hover:shadow-transparent duration-500 relative border-4 hover:cursor-pointer rounded-lg border-neutral-600 group overflow-hidden "
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: "all" }}
+          >
             <Image
               src={ProfilAboutMeImage}
               alt="Profil Portfolio"
               className="object-cover group-hover:scale-110 group-hover:rotate-3 duration-500 h-full absolute"
             />
             <div className="group-hover:bg-transparent bg-neutral-700/30 absolute z-10 w-full h-full duration-500" />
-          </div>
+          </motion.div>
           <div className="mt-6 md:mt-3 md:w-[55%] ">
-            <h1 className="text-center md:text-start text-4xl md:text-5xl text-neutral-200 font-bold mb-8">
-              <span className="block text-orange-600 mb-3">
+            <motion.h1 className="text-center md:text-start text-4xl md:text-5xl text-neutral-200 font-bold mb-8">
+              <motion.span
+                className="block text-orange-600 mb-3"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                viewport={{ once: true, amount: "all" }}
+              >
                 Hello, I&apos;m
-              </span>
-              Wahyudi Umar
-            </h1>
-            <p className="text-neutral-500 text-lg text-justify">
+              </motion.span>
+              <motion.span
+                className="block"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+                viewport={{ once: true, amount: "all" }}
+              >
+                Wahyudi Umar
+              </motion.span>
+            </motion.h1>
+            <motion.p
+              className="text-neutral-500 text-lg text-justify"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: "all" }}
+            >
               Saya adalah seorang Programmer Amatir yang berfokus pada
               pengembangan sebuah Aplikasi Berbasis Web di Bidang Front-End
               Developer. Saat ini, saya berfokus pada pengalaman saya untuk
               menciptakan sebuah aplikasi yang menarik dan selalu berupaya untuk
               memberikan solusi dan masukan terhadap proyek yang saya kerjakan.
-            </p>
+            </motion.p>
 
-            <div className="my-6 border flex gap-x-1 items-center border-neutral-800 py-4 px-6 rounded-xl">
+            <motion.div
+              className="my-6 border flex gap-x-1 items-center border-neutral-800 py-4 px-6 rounded-xl"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: "all" }}
+            >
               <QuoteIcon className="w-6 -mt-4 text-neutral-600" />
               <span className="text-neutral-300 text-sm italic font-semibold">
                 &quot;Memanfaatkan AI sebagai alat bantu, bukan pengganti.&quot;
               </span>
-            </div>
+            </motion.div>
 
-            <button className=" flex items-center justify-center md:justify-start w-full md:w-auto gap-x-2 bg-orange-600 px-6 text-base py-2.5 rounded-md font-bold text-neutral-50">
+            <motion.button
+              className=" flex items-center justify-center md:justify-start w-full md:w-auto gap-x-2 bg-orange-600 px-6 text-base py-2.5 rounded-md font-bold text-neutral-50"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: "all" }}
+            >
               <Download className="w-5 h-5" />
               Download CV
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
@@ -131,15 +233,27 @@ export default function HomePage() {
       {/* Portfolio Showcase */}
       <div className="mt-14 md:pt-20" id="portfolio">
         <div className="flex flex-col justify-center gap-y-4">
-          <h2 className="text-4xl md:text-5xl text-orange-500 text-center font-bold">
+          <motion.h2
+            className="text-4xl md:text-5xl text-orange-500 text-center font-bold"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: "all" }}
+          >
             Portfolio Showcase
-          </h2>
-          <p className="text-center flex items-center justify-center gap-x-3 text-base text-neutral-500">
+          </motion.h2>
+          <motion.p
+            className="text-center flex items-center justify-center gap-x-3 text-base text-neutral-500"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            viewport={{ once: true, amount: "all" }}
+          >
             Cari tahu perkembangan saya melalui berbagai proyek dan keahlian
             yang saya miliki. Setiap proyek dan keahlian yang saya miliki adalah
             pencapaian saya pribadi untuk perkembangan karir saya menjadi lebih
             baik dari sebelumnya.
-          </p>
+          </motion.p>
         </div>
 
         <div className="mt-10">
